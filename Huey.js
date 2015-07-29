@@ -31,6 +31,16 @@ var Huey = (function () {
     function GetRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
     }
+    function ContainsRange(start, end, haystack) {
+        var needles = [];
+        for (var i = start; i <= end; i++) {
+            needles.push(i);
+        }
+        for (var i = 0, len = needles.length; i < len; i++) {
+            if (haystack.indexOf(needles[i]) == -1) return false;
+        }
+        return true;
+    }
     return {
         colors: [
            { 'indianred': 'CD5C5C' },
@@ -185,7 +195,7 @@ var Huey = (function () {
                     return null;
                 }
                 index = GetRandomInt(0, Huey.colors.length);
-                while(usedColors.indexOf(index) > -1 && usedColors.length < 143)
+                while(usedColors.indexOf(index) > -1)
                     index = GetRandomInt(0, Huey.colors.length);
                 return Object.keys(Huey.colors[index])[0];
             } else {
@@ -202,7 +212,7 @@ var Huey = (function () {
                     return null;
                 }
                 index = GetRandomInt(0, Huey.colors.length);
-                while (usedColors.indexOf(index) > -1 && usedColors.length < 143)
+                while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(0, Huey.colors.length);
                 return Object.keys(Huey.colors[index])[0];
             } else {
@@ -219,7 +229,7 @@ var Huey = (function () {
                     return null;
                 }
                 index = GetRandomInt(0, Huey.colors.length);
-                while (usedColors.indexOf(index) > -1 && usedColors.length < 143)
+                while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(0, Huey.colors.length);
                 return Object.keys(Huey.colors[index])[0];
             } else {
@@ -232,11 +242,11 @@ var Huey = (function () {
             unused = unused || false;
             var index = -1;
             if (unused) {
-                if (usedColors.length == 143) {
+                if (ContainsRange(0, 8, usedColors)) {
                     return null;
                 }
                 index = GetRandomInt(0, 8);
-                while (usedColors.indexOf(index) > -1 && usedColors.length < 143)
+                while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(0, 8);
                 return Object.keys(Huey.colors[index])[0];
             } else {
@@ -249,11 +259,11 @@ var Huey = (function () {
             unused = unused || false;
             var index = -1;
             if (unused) {
-                if (usedColors.length == 143) {
+                if (ContainsRange(9, 14, usedColors)) {
                     return null;
                 }
                 index = GetRandomInt(9, 14);
-                while (usedColors.indexOf(index) > -1 && usedColors.length < 143)
+                while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(9, 14);
                 return Object.keys(Huey.colors[index])[0];
             } else {
@@ -266,11 +276,11 @@ var Huey = (function () {
             unused = unused || false;
             var index = -1;
             if (unused) {
-                if (usedColors.length == 143) {
+                if (ContainsRange(15, 20, usedColors)) {
                     return null;
                 }
                 index = GetRandomInt(15, 20);
-                while (usedColors.indexOf(index) > -1 && usedColors.length < 143)
+                while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(15, 20);
                 return Object.keys(Huey.colors[index])[0];
             } else {
@@ -283,11 +293,11 @@ var Huey = (function () {
             unused = unused || false;
             var index = -1;
             if (unused) {
-                if (usedColors.length == 143) {
+                if (ContainsRange(21, 31, usedColors)) {
                     return null;
                 }
                 index = GetRandomInt(21, 31);
-                while (usedColors.indexOf(index) > -1 && usedColors.length < 143)
+                while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(21, 31);
                 return Object.keys(Huey.colors[index])[0];
             } else {
@@ -300,11 +310,11 @@ var Huey = (function () {
             unused = unused || false;
             var index = -1;
             if (unused) {
-                if (usedColors.length == 143) {
+                if (ContainsRange(32, 50, usedColors)) {
                     return null;
                 }
                 index = GetRandomInt(32, 50);
-                while (usedColors.indexOf(index) > -1 && usedColors.length < 143)
+                while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(32, 50);
                 return Object.keys(Huey.colors[index])[0];
             } else {
@@ -317,11 +327,11 @@ var Huey = (function () {
             unused = unused || false;
             var index = -1;
             if (unused) {
-                if (usedColors.length == 143) {
+                if (ContainsRange(51, 73, usedColors)) {
                     return null;
                 }
                 index = GetRandomInt(51, 73);
-                while (usedColors.indexOf(index) > -1 && usedColors.length < 143)
+                while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(51, 73);
                 return Object.keys(Huey.colors[index])[0];
             } else {
@@ -334,11 +344,11 @@ var Huey = (function () {
             unused = unused || false;
             var index = -1;
             if (unused) {
-                if (usedColors.length == 143) {
+                if (ContainsRange(74, 98, usedColors)) {
                     return null;
                 }
                 index = GetRandomInt(74, 98);
-                while (usedColors.indexOf(index) > -1 && usedColors.length < 143)
+                while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(74, 98);
                 return Object.keys(Huey.colors[index])[0];
             } else {
@@ -351,11 +361,11 @@ var Huey = (function () {
             unused = unused || false;
             var index = -1;
             if (unused) {
-                if (usedColors.length == 143) {
+                if (ContainsRange(99, 115, usedColors)) {
                     return null;
                 }
                 index = GetRandomInt(99, 115);
-                while (usedColors.indexOf(index) > -1 && usedColors.length < 143)
+                while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(99, 115);
                 return Object.keys(Huey.colors[index])[0];
             } else {
@@ -368,11 +378,11 @@ var Huey = (function () {
             unused = unused || false;
             var index = -1;
             if (unused) {
-                if (usedColors.length == 143) {
+                if (ContainsRange(116, 132, usedColors)) {
                     return null;
                 }
                 index = GetRandomInt(116, 132);
-                while (usedColors.indexOf(index) > -1 && usedColors.length < 143)
+                while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(116, 132);
                 return Object.keys(Huey.colors[index])[0];
             } else {
@@ -385,11 +395,11 @@ var Huey = (function () {
             unused = unused || false;
             var index = -1;
             if (unused) {
-                if (usedColors.length == 143) {
+                if (ContainsRange(133, 142, usedColors)) {
                     return null;
                 }
                 index = GetRandomInt(133, 142);
-                while (usedColors.indexOf(index) > -1 && usedColors.length < 143)
+                while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(133, 142);
                 return Object.keys(Huey.colors[index])[0];
             } else {

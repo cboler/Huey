@@ -21,3 +21,4 @@ The "unused" parameter is a boolean to determine whether or not to allow the gen
 * Huey.GetRandomBrown(unused): returns an object containing the name and hex value of a random brown
 * Huey.GetRandomWhite(unused): returns an object containing the name and hex value of a random white
 * Huey.GetRandomGrey(unused): returns an object containing the name and hex value of a random grey
+* Huey.ClearUsedList(): clears the used colors list, necessary when the functions start returning null
