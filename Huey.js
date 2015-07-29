@@ -197,11 +197,11 @@ var Huey = (function () {
                 index = GetRandomInt(0, Huey.colors.length);
                 while(usedColors.indexOf(index) > -1)
                     index = GetRandomInt(0, Huey.colors.length);
+                usedColors.push(index);
                 return Object.keys(Huey.colors[index])[0];
             } else {
                 index = GetRandomInt(0, Huey.colors.length);
             }
-            usedColors.push(index);
             return Object.keys(Huey.colors[index])[0];
         },
         GetRandomColorHex: function (unused) {
@@ -214,11 +214,11 @@ var Huey = (function () {
                 index = GetRandomInt(0, Huey.colors.length);
                 while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(0, Huey.colors.length);
-                return Object.keys(Huey.colors[index])[0];
+                usedColors.push(index);
+                return Object.keys(Huey.colors[index]).map(function (key) { return Huey.colors[index][key] })[0];
             } else {
                 index = GetRandomInt(0, Huey.colors.length);
             }
-            usedColors.push(index);
             return Object.keys(Huey.colors[index]).map(function (key) { return Huey.colors[index][key] })[0];
         },
         GetRandomColor: function (unused) {
@@ -231,11 +231,11 @@ var Huey = (function () {
                 index = GetRandomInt(0, Huey.colors.length);
                 while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(0, Huey.colors.length);
-                return Object.keys(Huey.colors[index])[0];
+                usedColors.push(index);
+                return Huey.colors[index];
             } else {
                 index = GetRandomInt(0, Huey.colors.length);
             }
-            usedColors.push(index);
             return Huey.colors[index];
         },
         GetRandomRed: function (unused) {
@@ -248,11 +248,11 @@ var Huey = (function () {
                 index = GetRandomInt(0, 8);
                 while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(0, 8);
-                return Object.keys(Huey.colors[index])[0];
+                usedColors.push(index);
+                return Huey.colors[index];
             } else {
                 index = GetRandomInt(0, 8);
             }
-            usedColors.push(index);
             return Huey.colors[index];
         },
         GetRandomPink: function (unused) {
@@ -265,11 +265,11 @@ var Huey = (function () {
                 index = GetRandomInt(9, 14);
                 while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(9, 14);
-                return Object.keys(Huey.colors[index])[0];
+                usedColors.push(index);
+                return Huey.colors[index];
             } else {
                 index = GetRandomInt(9, 14);
             }
-            usedColors.push(index);
             return Huey.colors[index];
         },
         GetRandomOrange: function (unused) {
@@ -282,11 +282,11 @@ var Huey = (function () {
                 index = GetRandomInt(15, 20);
                 while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(15, 20);
-                return Object.keys(Huey.colors[index])[0];
+                usedColors.push(index);
+                return Huey.colors[index];
             } else {
                 index = GetRandomInt(15, 20);
             }
-            usedColors.push(index);
             return Huey.colors[index];
         },
         GetRandomYellow: function (unused) {
@@ -299,11 +299,11 @@ var Huey = (function () {
                 index = GetRandomInt(21, 31);
                 while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(21, 31);
-                return Object.keys(Huey.colors[index])[0];
+                usedColors.push(index);
+                return Huey.colors[index];
             } else {
                 index = GetRandomInt(21, 31);
             }
-            usedColors.push(index);
             return Huey.colors[index];
         },
         GetRandomPurple: function (unused) {
@@ -316,11 +316,11 @@ var Huey = (function () {
                 index = GetRandomInt(32, 50);
                 while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(32, 50);
-                return Object.keys(Huey.colors[index])[0];
+                usedColors.push(index);
+                return Huey.colors[index];
             } else {
                 index = GetRandomInt(32, 50);
             }
-            usedColors.push(index);
             return Huey.colors[index];
         },
         GetRandomGreen: function (unused) {
@@ -333,11 +333,11 @@ var Huey = (function () {
                 index = GetRandomInt(51, 73);
                 while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(51, 73);
-                return Object.keys(Huey.colors[index])[0];
+                usedColors.push(index);
+                return Huey.colors[index];
             } else {
                 index = GetRandomInt(51, 73);
             }
-            usedColors.push(index);
             return Huey.colors[index];
         },
         GetRandomBlue: function (unused) {
@@ -350,11 +350,11 @@ var Huey = (function () {
                 index = GetRandomInt(74, 98);
                 while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(74, 98);
-                return Object.keys(Huey.colors[index])[0];
+                usedColors.push(index);
+                return Huey.colors[index];
             } else {
                 index = GetRandomInt(74, 98);
             }
-            usedColors.push(index);
             return Huey.colors[index];
         },
         GetRandomBrown: function (unused) {
@@ -367,11 +367,11 @@ var Huey = (function () {
                 index = GetRandomInt(99, 115);
                 while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(99, 115);
-                return Object.keys(Huey.colors[index])[0];
+                usedColors.push(index);
+                return Huey.colors[index];
             } else {
                 index = GetRandomInt(99, 115);
             }
-            usedColors.push(index);
             return Huey.colors[index];
         },
         GetRandomWhite: function (unused) {
@@ -384,11 +384,11 @@ var Huey = (function () {
                 index = GetRandomInt(116, 132);
                 while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(116, 132);
-                return Object.keys(Huey.colors[index])[0];
+                usedColors.push(index);
+                return Huey.colors[index];
             } else {
                 index = GetRandomInt(116, 132);
             }
-            usedColors.push(index);
             return Huey.colors[index];
         },
         GetRandomGrey: function (unused) {
@@ -401,11 +401,11 @@ var Huey = (function () {
                 index = GetRandomInt(133, 142);
                 while (usedColors.indexOf(index) > -1)
                     index = GetRandomInt(133, 142);
-                return Object.keys(Huey.colors[index])[0];
+                usedColors.push(index);
+                return Huey.colors[index];
             } else {
                 index = GetRandomInt(133, 142);
             }
-            usedColors.push(index);
             return Huey.colors[index];
         },
         ClearUsedList: function () {
