@@ -4,7 +4,7 @@ A Javascript library for getting random colors, a random color of a specific fam
 ## Usage
 Huey contains 143 different named colors. It also maintains an internal closed list of used colors incase you don't want to repeat any.
 
-The "unused" parameter is a boolean to determine whether or not to allow the generated color to be used againl.
+The "unused" parameter is a boolean to determine whether or not to allow the generated color to be used again.
 
 
 * Huey.colors: is an enumeration of known color names and their hex values
